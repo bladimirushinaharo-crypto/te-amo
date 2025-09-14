@@ -1,2 +1,56 @@
-# te-amo
-mensaje
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Te Amo Mi Amor</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: pink;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+h1 {
+  color: red;
+  font-size: 50px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+.heart {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: red;
+  transform: rotate(-45deg);
+  animation: heartBeat 1s infinite;
+  opacity: 0;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: red;
+  border-radius: 50%;
+}
+.heart::before { top: -50px; left: 0; }
+.heart::after { left: 50px; top: 0; }
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1) rotate(-45deg);}
+  50% { transform: scale(1.2) rotate(-45deg);}
+}
+</style>
+</head>
+<body>
+<div class="heart"></div>
+<h1>Te amo mi amor ❤️</h1>
+</body>
+</html>
